@@ -1,19 +1,19 @@
 import React, { Component } from "react";
 
 class SearchBar extends Component {
-  state = { text: "" };
+  state = { term: "" };
   onFormSubmit = event => {
     event.preventDefault();
-    this.props.onSubmit(this.state.text);
+    this.props.onSubmit(this.state.term);
   };
   render() {
     return (
       <div className="ui raised segment">
-        <form onSubmit={e => this.onFormSubmit(e)}>
+        <form className="ui form" onSubmit={this.onFormSubmit}>
           <div className="ui fluid input">
             <input
-              value={this.state.text}
-              onChange={e => this.setState({ text: e.target.value })}
+              value={this.state.term}
+              onChange={e => this.setState({ term: e.target.value })}
               type="text"
               placeholder="Search for Videos..."
             />

@@ -2,16 +2,20 @@ import React, { Component } from "react";
 import SearchBar from "./SearchBar";
 import VideoList from "./VideoList";
 import VideoDetail from "./VideoDetail";
+import youtube from "../api/youtube";
 
 class App extends Component {
-  onSearchSubmit = text => {
-    console.log(text);
+  onTermSubmit = async term => {
+    await youtube.get("/search", {
+      q: term
+    });
+    console.log();
   };
 
   render() {
     return (
-      <div>
-        <SearchBar onSubmit={this.onSearchSubmit} />
+      <div className="ui container">
+        <SearchBar onSubmit={this.onTermSubmit} />
         <VideoDetail />
         <VideoList />
       </div>
