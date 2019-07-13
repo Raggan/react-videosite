@@ -1,8 +1,13 @@
 import React, { Component } from "react";
+import VideoItem from "./VideoItem";
 
 class VideoList extends Component {
   render() {
-    return <div>VideoList</div>;
+    return (
+      <div>
+        <VideoItem />
+      </div>
+    );
   }
 }
 
