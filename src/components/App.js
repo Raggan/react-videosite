@@ -5,11 +5,12 @@ import VideoDetail from "./VideoDetail";
 import youtube from "../api/youtube";
 
 class App extends Component {
+  state = { videos: [] };
   onTermSubmit = async term => {
-    await youtube.get("/search", {
+    let response = await youtube.get("/search", {
       q: term
     });
-    console.log();
+    this.setState({ videos: response.data.items });
   };
 
   render() {
