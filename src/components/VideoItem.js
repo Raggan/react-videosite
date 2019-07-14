@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 class VideoItem extends Component {
   render() {
-    return <div>VideoItem</div>;
+    return <div>{console.log(this.props.video)}</div>;
   }
 }
 

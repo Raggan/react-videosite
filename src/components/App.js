@@ -18,7 +18,7 @@ class App extends Component {
       <div className="ui container">
         <SearchBar onSubmit={this.onTermSubmit} />
         <VideoDetail />
-        <VideoList />
+        <VideoList videos={this.state.videos} />
       </div>
     );
   }
