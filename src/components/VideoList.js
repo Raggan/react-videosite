@@ -6,7 +6,7 @@ class VideoList extends Component {
     const renderedList = this.props.videos.map(video => {
       return <VideoItem key={video.id.videoId} video={video} />;
     });
-    return <div className="rendered-list">{renderedList}</div>;
+    return <div className="ui relaced divided list">{renderedList}</div>;
   }
 }
 
